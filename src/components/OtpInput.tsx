@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import "./OtpInput.css";
 const OtpInputField: React.FC = () => {
   const [otp, setOtp] = useState<string[]>(["", "", "", "", "", ""]);
@@ -42,7 +43,7 @@ const OtpInputField: React.FC = () => {
             ref={(ref) => (inputRefs.current[index] = ref)}
             style={{ width: "1em" }}
           />
-          {index < otp.length - 1 && <span className="hyphen">-</span>}
+          {index < otp.length - 1 && <span key={uuidv4()} className="hyphen">-</span>}
         </>
       ))}
     </div>
