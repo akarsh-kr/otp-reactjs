@@ -28,11 +28,10 @@ const OtpInputField: React.FC = () => {
     }
   }
   return (
-    <div>
+    <div className="input_container">
       {otp.map((value, index) => (
-        <>
+        <div key={index}>
           <input
-            key={index}
             type="text"
             className="otp_input"
             maxLength={1}
@@ -43,8 +42,8 @@ const OtpInputField: React.FC = () => {
             ref={(ref) => (inputRefs.current[index] = ref)}
             style={{ width: "1em" }}
           />
-          {index < otp.length - 1 && <span key={uuidv4()} className="hyphen">-</span>}
-        </>
+          {index < otp.length - 1 && <span className="hyphen">-</span>}
+        </div>
       ))}
     </div>
   );

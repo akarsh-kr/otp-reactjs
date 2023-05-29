@@ -3,3 +3,7 @@
     text-align: center;
     margin: 10px;
 }
+.input_container{
+    display:flex;
+    flex-direction: row;
+}
