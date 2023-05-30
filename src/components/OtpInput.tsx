@@ -41,6 +41,7 @@ const OtpInputField: React.FC = () => {
         updatedOtp[index] = value;
       });
       setOtp(updatedOtp);
+      inputRefs.current[pastedData.length - 1]?.focus();
       setError("");
     } else {
       setError("Please enter only numeric values.");
